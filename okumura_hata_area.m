@@ -40,6 +40,3 @@ xlabel('d [km]');
 ylabel('L [dB]');
 
 legend([h1, h2, h3], {'Urban Large', 'Sub Urban', 'Rural'}, 'Location', 'southeast');
-
-text(1, max(LUrban) - 10, sprintf('f = %d MHz\nht = %d m\nhr = %d m', fc, ht, hr), ...
-   'FontSize', 10, 'HorizontalAlignment', 'left', 'VerticalAlignment', 'top');

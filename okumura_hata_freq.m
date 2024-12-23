@@ -1,4 +1,4 @@
-% Sub-Urban | Okumura-Hata Path Loss Model
+% Sub-Urban // Okumura-Hata Path Loss Model
 
 %% Define the parameters
 d = 1:0.01:20; % Jarak antena (1 km hingga 20 km)
@@ -24,14 +24,16 @@ sub_urban1 = medium_urban1 - 2*(log10(fc1/28)).^2 - 5.4;
 sub_urban2 = medium_urban2 - 2*(log10(fc2/28)).^2 - 5.4;
 sub_urban3 = medium_urban3 - 2*(log10(fc3/28)).^2 - 5.4;
 
-%% --- Plot Hasil Perhitungan Loss
+%% --- Plot Hasil Perhitungan Loss ---
 figure(1);
 hold on;
-f1 = plot(d, sub_urban1, 'r-V', 'MarkerIndices', 1:50:length(d), 'LineWidth', 1.5);
-f2 = plot(d, sub_urban2, 'g-X', 'MarkerIndices', 1:50:length(d), 'LineWidth', 1.5);
-f3 = plot(d, sub_urban3, 'b-O', 'MarkerIndices', 1:50:length(d), 'LineWidth', 1.5);
+f1 = plot(d, sub_urban1, 'r-V', 'MarkerIndices', 1:50:length(d), 'LineWidth', 1.5); 
+f2 = plot(d, sub_urban2, 'g-X', 'MarkerIndices', 1:50:length(d), 'LineWidth', 1.5); 
+f3 = plot(d, sub_urban3, 'b-O', 'MarkerIndices', 1:50:length(d), 'LineWidth', 1.5); 
 grid on;
 
 title('Pengaruh Path Loss Berdasarkan Frequency di Wilayah Sub Urban')
 xlabel('d [km]');
 ylabel('L [dB]');
+
+legend([f1, f2, f3], {'Frequency: 1250 MHz', 'Frequency: 550 MHz', 'Frequency: 250 MHz'}, 'Location', 'southeast');
